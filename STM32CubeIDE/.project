@@ -345,6 +345,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/GeneratedFont.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/HighScoreViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/highscore_screen/HighScoreViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Kerning_verdana_10_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdana_10_4bpp.cpp</locationURI>
@@ -363,6 +368,11 @@
 			<name>Application/User/generated/LanguageGb.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Menu1ViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/menu1_screen/Menu1ViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/SVGDatabase.cpp</name>
@@ -415,14 +425,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Tetris-Logo-1.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_backgrounds_240x320_spotlights.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_backgrounds_240x320_spotlights.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_arrowDown.cpp</name>
@@ -435,9 +440,44 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_blank-white-background-xbsfzsltjksfompa.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_do_kho.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_do_kho.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_do_kho_1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_do_kho_1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exit.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exit.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exit_1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exit_1.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_game_over.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_game_over.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_high_score.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_high_score.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_high_score_1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_high_score_1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_menu.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_menu.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_pixel-art-stone-style-button-for-game-and-app-interface-icon-for-8bit-game-on-white-background-vector.cpp</name>
@@ -448,6 +488,16 @@
 			<name>Application/User/generated/image_pngtree-buttons-games-button-illustration-png-image_3980551.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_pngtree-buttons-games-button-illustration-png-image_3980551.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_star_game_.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_star_game_.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_star_game_1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_star_game_1.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/CustomContainer1.cpp</name>
@@ -488,6 +538,26 @@
 			<name>Application/User/gui/GameOverView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/gameover_screen/GameOverView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/HighScorePresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/highscore_screen/HighScorePresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/HighScoreView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/highscore_screen/HighScoreView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Menu1Presenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu1_screen/Menu1Presenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Menu1View.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu1_screen/Menu1View.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>

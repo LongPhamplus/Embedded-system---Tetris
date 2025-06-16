@@ -20,6 +20,10 @@
 #include <gui/gameover_screen/GameOverPresenter.hpp>
 #include <gui/startgame_screen/StartGameView.hpp>
 #include <gui/startgame_screen/StartGamePresenter.hpp>
+#include <gui/menu1_screen/Menu1View.hpp>
+#include <gui/menu1_screen/Menu1Presenter.hpp>
+#include <gui/highscore_screen/HighScoreView.hpp>
+#include <gui/highscore_screen/HighScorePresenter.hpp>
 
 
 /**
@@ -46,7 +50,9 @@ public:
             touchgfx::meta::TypeList< GameBoardView,
             touchgfx::meta::TypeList< GameOverView,
             touchgfx::meta::TypeList< StartGameView,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::TypeList< Menu1View,
+            touchgfx::meta::TypeList< HighScoreView,
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -62,7 +68,9 @@ public:
             touchgfx::meta::TypeList< GameBoardPresenter,
             touchgfx::meta::TypeList< GameOverPresenter,
             touchgfx::meta::TypeList< StartGamePresenter,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::TypeList< Menu1Presenter,
+            touchgfx::meta::TypeList< HighScorePresenter,
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -85,7 +93,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoGameBoardScreenNoTransition();
+        app.gotoStartGameScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

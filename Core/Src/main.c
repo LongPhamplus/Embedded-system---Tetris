@@ -25,6 +25,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,13 +90,20 @@ const osThreadAttr_t GUI_Task_attributes = {
   .stack_size = 8192 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* USER CODE BEGIN PV */
-uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
+/* Definitions for myTask02 */
+osThreadId_t myTask02Handle;
+const osThreadAttr_t myTask02_attributes = {
+  .name = "myTask02",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for myQueue01 */
 osMessageQueueId_t myQueue01Handle;
 const osMessageQueueAttr_t myQueue01_attributes = {
-		.name = "myQueue01"
+  .name = "myQueue01"
 };
-
+/* USER CODE BEGIN PV */
+uint8_t isRevD = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,6 +117,7 @@ static void MX_LTDC_Init(void);
 static void MX_DMA2D_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
+void StartTask03(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -146,7 +156,7 @@ static LCD_DrvTypeDef* LcdDrv;
 
 int score = 0;
 int mode = 3;
-
+int high_score = 0;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 /* USER CODE END 0 */
@@ -208,6 +218,10 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of myQueue01 */
+  myQueue01Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue01_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   myQueue01Handle = osMessageQueueNew(16, sizeof(uint16_t), &myQueue01_attributes);
@@ -219,6 +233,9 @@ int main(void)
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
+
+  /* creation of myTask02 */
+  myTask02Handle = osThreadNew(StartTask03, NULL, &myTask02_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -238,7 +255,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -629,12 +645,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : PB12 PB13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PG2 PG3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /*Configure GPIO pins : PA0 */
@@ -978,28 +1006,156 @@ void LCD_Delay(uint32_t Delay)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+void StartDefaultTask(void *argument) // task xu li nut bam
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+	uint8_t move_cmd = 0;
 	uint8_t buttonPressed = 0;
+	uint8_t left_buttonPressed = 0;
+	uint8_t right_buttonPressed = 0;
+	uint8_t up_buttonPressed = 0;
+	uint8_t down_buttonPressed = 0;
 	for(;;)
-	  {
-		GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-		if (state == GPIO_PIN_SET && buttonPressed == 0) {
-			buttonPressed = 1;
-			uint8_t data = 'T';
-			osMessageQueuePut(myQueue01Handle, &data, 0, 10);
-		}
-		else if (state == GPIO_PIN_RESET) {
-			buttonPressed = 0;
-		}
+	{
+	    GPIO_PinState left_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2);
+	    GPIO_PinState right_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3);
+	    GPIO_PinState up_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13);
+	    GPIO_PinState down_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12);
+	    GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 
-		osDelay(10);
-	  }
+	    // Xử lý nút nhấn chính (trên PA0)
+	    if (state == GPIO_PIN_RESET && buttonPressed == 0) {
+	        buttonPressed = 1;
+	        move_cmd = 3;
+	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+	    } else if (state == GPIO_PIN_SET) {
+	        buttonPressed = 0;
+	    }
+
+	    // Xử lý nút trái
+	    if (left_button_state == GPIO_PIN_RESET && left_buttonPressed == 0) {
+	        left_buttonPressed = 1;
+	        move_cmd = 2; // MOVE_LEFT
+	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+	    } else if (left_button_state == GPIO_PIN_SET) {
+	        left_buttonPressed = 0;
+	    }
+
+	    // Xử lý nút phải
+	    if (right_button_state == GPIO_PIN_RESET && right_buttonPressed == 0) {
+	        right_buttonPressed = 1;
+	        move_cmd = 1; // MOVE_RIGHT
+	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+	    } else if (right_button_state == GPIO_PIN_SET) {
+	        right_buttonPressed = 0;
+	    }
+
+	    // Xử lý nút lên
+	    if (up_button_state == GPIO_PIN_RESET && up_buttonPressed == 0) {
+	        up_buttonPressed = 1;
+	        move_cmd = 3; // MOVE_UP
+	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+	    } else if (up_button_state == GPIO_PIN_SET) {
+	        up_buttonPressed = 0;
+	    }
+
+	    // Xử lý nút xuống
+	    if (down_button_state == GPIO_PIN_RESET && down_buttonPressed == 0) {
+	   	        down_buttonPressed = 1;
+	   	        move_cmd = 4; // MOVE_UP
+	   	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+	   	    } else if (down_button_state == GPIO_PIN_SET) {
+	   	        down_buttonPressed = 0;
+	   	    }
+
+	    osDelay(10);
+	}
+
   /* USER CODE END 5 */
 }
 
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the myTask02 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void *argument) //task xu li joysticks(lay thong so tu file setup.txt)
+{
+  /* USER CODE BEGIN StartTask03 */
+  /* Infinite loop */
+  for(;;)
+  {
+//			HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
+//			HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
+//			HAL_ADC_PollForConversion(&hadc1, 10);
+//			HAL_ADC_PollForConversion(&hadc2, 10);
+//			int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
+//			int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
+//			uint8_t buttonPressed = 0;
+//			uint8_t left_buttonPressed = 0;
+//			uint8_t right_buttonPressed = 0;
+//			uint8_t up_buttonPressed = 0;
+//			uint8_t down_buttonPressed = 0;
+//		    GPIO_PinState left_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2);
+//		    GPIO_PinState right_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3);
+//		    GPIO_PinState up_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13);
+//		    GPIO_PinState down_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12);
+//		    GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+//
+//		    // Xử lý nút nhấn chính (trên PA0)
+//		    if ( X = 0 && Y == 0) {
+//		        buttonPressed = 1;
+//		        move_cmd = 3;
+//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+//		    } else if (state == GPIO_PIN_SET) {
+//		        buttonPressed = 0;
+//		    }
+//
+//		    // Xử lý nút trái
+//		    if () {
+//		        left_buttonPressed = 1;
+//		        move_cmd = 2; // MOVE_LEFT
+//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+//		    } else if (left_button_state == GPIO_PIN_SET) {
+//		        left_buttonPressed = 0;
+//		    }
+//
+//		    // Xử lý nút phải
+//		    if () {
+//		        right_buttonPressed = 1;
+//		        move_cmd = 1; // MOVE_RIGHT
+//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+//		    } else if (right_button_state == GPIO_PIN_SET) {
+//		        right_buttonPressed = 0;
+//		    }
+//
+//		    // Xử lý nút lên
+//		    if () {
+//		        up_buttonPressed = 1;
+//		        move_cmd = 3; // MOVE_UP
+//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+//		    } else if (up_button_state == GPIO_PIN_SET) {
+//		        up_buttonPressed = 0;
+//		    }
+//
+//		    // Xử lý nút xuống
+//		    if () {
+//		   	        down_buttonPressed = 1;
+//		   	        move_cmd = 4; // MOVE_UP
+//		   	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+//		   	    } else if (down_button_state == GPIO_PIN_SET) {
+//		   	        down_buttonPressed = 0;
+//		   	    }
+
+		    osDelay(10);
+  }
+
+
+  /* USER CODE END StartTask03 */
+}
 /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM6 interrupt took place, inside

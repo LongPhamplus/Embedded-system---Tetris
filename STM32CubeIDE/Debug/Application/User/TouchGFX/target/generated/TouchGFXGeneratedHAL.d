@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp \
+ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp \
  ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
@@ -62,9 +62,6 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp \
  ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
@@ -72,6 +69,12 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
@@ -195,9 +198,6 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:
@@ -205,6 +205,12 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp:
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp:

@@ -235,6 +235,30 @@
     <Filter Include="Header Files\generated\gui_generated\startgame_screen">
       <UniqueIdentifier>9E64B78D-1068-FBE1-904A-C28140B6D65E</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\menu1_screen">
+      <UniqueIdentifier>861DF019-26CC-8527-CB15-77DA48FE4BA1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\menu1_screen">
+      <UniqueIdentifier>EB387035-2906-6353-83FB-E900D00EDA31</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\menu1_screen">
+      <UniqueIdentifier>55653E23-5666-44BB-558A-D96D70B12ACD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\menu1_screen">
+      <UniqueIdentifier>7DAC6036-09AF-0248-9AF6-F96C53EE7E5D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\highscore_screen">
+      <UniqueIdentifier>09A31804-D568-C3EA-1055-53EE87866CB8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\highscore_screen">
+      <UniqueIdentifier>FF05BA43-5F34-CB7D-03DD-DE9546A13E34</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\highscore_screen">
+      <UniqueIdentifier>10C2D253-94FC-B152-3E14-9E91E61436A8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\highscore_screen">
+      <UniqueIdentifier>C978F936-D1B9-77A0-A4DE-3AB26476351D</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -311,6 +335,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\startgame_screen\StartGameViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\startgame_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\menu1_screen\Menu1Presenter.cpp">
+      <Filter>Source Files\gui\menu1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\menu1_screen\Menu1View.cpp">
+      <Filter>Source Files\gui\menu1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\menu1_screen\Menu1ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\menu1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\highscore_screen\HighScorePresenter.cpp">
+      <Filter>Source Files\gui\highscore_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\highscore_screen\HighScoreView.cpp">
+      <Filter>Source Files\gui\highscore_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\highscore_screen\HighScoreViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\highscore_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -795,6 +837,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startgame_screen\StartGameViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\startgame_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\menu1_screen\Menu1Presenter.hpp">
+      <Filter>Header Files\gui\menu1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\menu1_screen\Menu1View.hpp">
+      <Filter>Header Files\gui\menu1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\menu1_screen\Menu1ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\menu1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\highscore_screen\HighScorePresenter.hpp">
+      <Filter>Header Files\gui\highscore_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\highscore_screen\HighScoreView.hpp">
+      <Filter>Header Files\gui\highscore_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\highscore_screen\HighScoreViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\highscore_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

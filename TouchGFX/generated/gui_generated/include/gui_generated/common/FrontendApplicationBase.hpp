@@ -17,7 +17,7 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoGameBoardScreenNoTransition();
+        gotoStartGameScreenNoTransition();
     }
 
     // GameMenu
@@ -28,6 +28,15 @@ public:
 
     // GameOver
     void gotoGameOverScreenNoTransition();
+
+    // StartGame
+    void gotoStartGameScreenNoTransition();
+
+    // Menu1
+    void gotoMenu1ScreenNoTransition();
+
+    // HighScore
+    void gotoHighScoreScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -42,6 +51,15 @@ protected:
 
     // GameOver
     void gotoGameOverScreenNoTransitionImpl();
+
+    // StartGame
+    void gotoStartGameScreenNoTransitionImpl();
+
+    // Menu1
+    void gotoMenu1ScreenNoTransitionImpl();
+
+    // HighScore
+    void gotoHighScoreScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

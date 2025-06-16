@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_A2GD" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2ISR" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="BEST_SCORE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_WIFP" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Your best score:&#10;   </Translation>
+      </Text>
       <Text Id="OVERSCORE" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -21,23 +33,11 @@
       <Text Id="__SingleUse_X5YG" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Click OK to start !!</Translation>
       </Text>
-      <Text Id="__SingleUse_MRJK" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">Down</Translation>
-      </Text>
-      <Text Id="__SingleUse_AMI8" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">Right</Translation>
-      </Text>
-      <Text Id="__SingleUse_0FHL" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">Left</Translation>
-      </Text>
       <Text Id="SCORE" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_2ISR" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_Q1TT" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_Q1TT" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">SCORE: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_HWGC" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">SCORE</Translation>

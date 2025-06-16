@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/gameover_screen/GameOverViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 GameOverViewBase::GameOverViewBase()
 {
@@ -12,7 +12,15 @@ GameOverViewBase::GameOverViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    textArea1.setXY(70, 169);
+    image3.setXY(0, 0);
+    image3.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_240X320_SPOTLIGHTS_ID));
+    add(image3);
+
+    image1.setXY(54, -36);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_GAME_OVER_ID));
+    add(image1);
+
+    textArea1.setXY(108, 178);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(224, 76, 65));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T_OVERSCORE).getText());
@@ -20,10 +28,6 @@ GameOverViewBase::GameOverViewBase()
     textArea1.resizeToCurrentText();
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q1TT));
     add(textArea1);
-
-    image1.setXY(60, -43);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_GAME_OVER_ID));
-    add(image1);
 }
 
 GameOverViewBase::~GameOverViewBase()
@@ -34,4 +38,12 @@ GameOverViewBase::~GameOverViewBase()
 void GameOverViewBase::setupScreen()
 {
 
+}
+
+void GameOverViewBase::handleTickEvent()
+{
+    //Interaction2
+    //When every N tick call virtual function
+    //Call tickEvent
+    tickEvent();
 }

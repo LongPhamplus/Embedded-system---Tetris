@@ -11,15 +11,13 @@ public:
     virtual ~StartGameView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
     virtual void handleTickEvent();
-
 protected:
 
     uint32_t tickCountStart = 0;
     bool startAnimation = false;
 
-    void chooseMode();
+    void goToMenu();
 };
 
 #endif // STARTGAMEVIEW_HPP

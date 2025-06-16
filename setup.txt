@@ -1,0 +1,24 @@
+PG3,PG2,PB13,PB12:trái,phải,lên,xuống
+PA9:phát âm
+Nút từ trên xuống dưới(từ phải sang trái):
+PG3
+PG2
+PB13
+PB12
+Khi chọn Menu:
+Lên
+Đi tiếp
+Thoát
+Xuống
+Chơi game:
+Phải
+Trái
+Xoay
+Xuống
+Thông số của Joysticks:
+	Giữa:X = ;Y = ;
+	Trái:X = ;Y = ;
+	Phải:X = ;Y = ;
+	Lên:X = ;Y = ;
+	Xuống:X = ;Y = ;
+	 

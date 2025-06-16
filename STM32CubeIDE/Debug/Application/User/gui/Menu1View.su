@@ -1,0 +1,8 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/menu1_screen/Menu1View.cpp:22:6:virtual void Menu1View::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp:11:13:Menu1View::~Menu1View()	8	static
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp:11:13:virtual Menu1View::~Menu1View()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/menu1_screen/Menu1View.cpp:12:1:Menu1View::Menu1View()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/menu1_screen/Menu1View.cpp:17:6:virtual void Menu1View::setupScreen()	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/menu1_screen/Menu1View.cpp:26:6:virtual void Menu1View::tickEvent()	32	static

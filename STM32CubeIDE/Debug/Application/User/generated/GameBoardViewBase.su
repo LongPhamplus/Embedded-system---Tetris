@@ -24,29 +24,21 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:403:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextArea::getWildcard2() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:84:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:26:18:virtual void GameBoardViewBase::tickEvent()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:30:18:virtual void GameBoardViewBase::handleRight()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:34:18:virtual void GameBoardViewBase::handleLeft()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:38:18:virtual void GameBoardViewBase::handleDown()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<GameBoardPresenter>::~View()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<GameBoardViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:56:1:GameBoardViewBase::~GameBoardViewBase()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:61:6:virtual void GameBoardViewBase::setupScreen()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:91:6:virtual void GameBoardViewBase::handleTickEvent()	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = GameBoardViewBase; T1 = const touchgfx::AbstractButton&]	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = GameBoardViewBase; T1 = const touchgfx::AbstractButton&]	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:35:1:GameBoardViewBase::~GameBoardViewBase()	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:40:6:virtual void GameBoardViewBase::setupScreen()	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:45:6:virtual void GameBoardViewBase::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<GameBoardPresenter>::~View()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<GameBoardViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:56:1:virtual GameBoardViewBase::~GameBoardViewBase()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:35:1:virtual GameBoardViewBase::~GameBoardViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:66:6:void GameBoardViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	24	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:9:1:GameBoardViewBase::GameBoardViewBase()	80	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp:9:1:GameBoardViewBase::GameBoardViewBase()	64	static

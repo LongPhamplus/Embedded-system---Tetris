@@ -17,6 +17,10 @@
 #include <gui/gameover_screen/GameOverPresenter.hpp>
 #include <gui/startgame_screen/StartGameView.hpp>
 #include <gui/startgame_screen/StartGamePresenter.hpp>
+#include <gui/menu1_screen/Menu1View.hpp>
+#include <gui/menu1_screen/Menu1Presenter.hpp>
+#include <gui/highscore_screen/HighScoreView.hpp>
+#include <gui/highscore_screen/HighScorePresenter.hpp>
 
 using namespace touchgfx;
 
@@ -74,4 +78,43 @@ void FrontendApplicationBase::gotoGameOverScreenNoTransition()
 void FrontendApplicationBase::gotoGameOverScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<GameOverView, GameOverPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// StartGame
+
+void FrontendApplicationBase::gotoStartGameScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoStartGameScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoStartGameScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<StartGameView, StartGamePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Menu1
+
+void FrontendApplicationBase::gotoMenu1ScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMenu1ScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMenu1ScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Menu1View, Menu1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// HighScore
+
+void FrontendApplicationBase::gotoHighScoreScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoHighScoreScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoHighScoreScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<HighScoreView, HighScorePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

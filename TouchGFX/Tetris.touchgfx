@@ -125,7 +125,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "GameBoard"
+              "ActionComponent": "Menu1"
             }
           }
         ]
@@ -134,20 +134,11 @@
         "Name": "GameBoard",
         "Components": [
           {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 192,
-            "Y": 108,
-            "Width": 35,
-            "Height": 10,
-            "TextId": "__SingleUse_HWGC",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 224,
-              "Green": 76,
-              "Blue": 65
-            },
-            "AutoSize": true
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "menu.png"
           },
           {
             "Type": "TextArea",
@@ -171,70 +162,20 @@
             }
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "goLeft",
-            "Y": 270,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_0FHL",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 192,
+            "Y": 108,
+            "Width": 35,
+            "Height": 10,
+            "TextId": "__SingleUse_HWGC",
             "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "goRight",
-            "Y": 212,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_AMI8",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+            "Color": {
+              "Red": 224,
+              "Green": 76,
+              "Blue": 65
             },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "goDown",
-            "Y": 154,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_MRJK",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -259,39 +200,6 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "GameOver"
             }
-          },
-          {
-            "InteractionName": "Interaction3",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "goRight"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "handleRight"
-            }
-          },
-          {
-            "InteractionName": "Interaction4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "goLeft"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "handleLeft"
-            }
-          },
-          {
-            "InteractionName": "Interaction5",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "goDown"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "handleDown"
-            }
           }
         ]
       },
@@ -299,11 +207,27 @@
         "Name": "GameOver",
         "Components": [
           {
+            "Type": "Image",
+            "Name": "image3",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_spotlights.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 54,
+            "Y": -36,
+            "Width": 120,
+            "Height": 300,
+            "RelativeFilename": "game_over.png"
+          },
+          {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 70,
-            "Y": 169,
-            "Width": 100,
+            "X": 108,
+            "Y": 178,
+            "Width": 13,
             "Height": 24,
             "TextId": "__SingleUse_Q1TT",
             "TextRotation": "0",
@@ -318,18 +242,32 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 60,
-            "Y": -43,
-            "Width": 120,
-            "Height": 300,
-            "RelativeFilename": "game_over.png"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Menu1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          }
+        ]
       },
       {
         "Name": "StartGame",
@@ -380,6 +318,170 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Menu1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "menu.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 41,
+            "Y": 106,
+            "Width": 159,
+            "Height": 39,
+            "RelativeFilename": "star_game .png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 41,
+            "Y": 160,
+            "Width": 159,
+            "Height": 40,
+            "RelativeFilename": "do_kho.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 41,
+            "Y": 212,
+            "Width": 159,
+            "Height": 40,
+            "RelativeFilename": "high_score.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image5",
+            "X": 68,
+            "Y": 260,
+            "Width": 104,
+            "Height": 51,
+            "RelativeFilename": "exit.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "GameBoard"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "GameMenu"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartGame"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "HighScore"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HighScore",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "menu.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 39,
+            "Y": 136,
+            "Width": 163,
+            "Height": 48,
+            "TextId": "__SingleUse_WIFP",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 113,
+            "Y": 190,
+            "Width": 15,
+            "Height": 24,
+            "TextId": "__SingleUse_A2GD",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {}
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Menu1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -397,7 +499,7 @@
       "Height": 320
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "GameBoard",
+    "StartupScreenName": "StartGame",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
