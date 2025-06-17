@@ -1,5 +1,5 @@
 PG3,PG2,PB13,PB12:trái,phải,lên,xuống
-PA9:phát âm
+PA9:loa
 Nút từ trên xuống dưới(từ phải sang trái):
 PG3
 PG2
