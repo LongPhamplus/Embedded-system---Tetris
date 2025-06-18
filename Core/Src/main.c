@@ -64,6 +64,9 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc2;
+
 CRC_HandleTypeDef hcrc;
 
 DMA2D_HandleTypeDef hdma2d;
@@ -102,8 +105,28 @@ osMessageQueueId_t myQueue01Handle;
 const osMessageQueueAttr_t myQueue01_attributes = {
   .name = "myQueue01"
 };
+/* Definitions for myQueue02 */
+osMessageQueueId_t myQueue02Handle;
+const osMessageQueueAttr_t myQueue02_attributes = {
+  .name = "myQueue02"
+};
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0;
+int Joysticks(int X, int Y, int cmd) {
+    switch(cmd) {
+    case 4:
+        return (X > 50 && X < 60 && Y > 80 && Y < 180);
+    case 3:
+        return (X > 175 && X < 195 && Y > 85 && Y < 175);
+    case 2:
+        return (X > 90 && X < 175 && Y > 80 && Y < 85);
+    case 1:
+        return (X > 90 && X < 175 && Y > 175 && Y < 180);
+    default:
+        return 0;
+    }
+}
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,6 +138,8 @@ static void MX_SPI5_Init(void);
 static void MX_FMC_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_DMA2D_Init(void);
+static void MX_ADC1_Init(void);
+static void MX_ADC2_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void StartTask03(void *argument);
@@ -196,6 +221,8 @@ int main(void)
   MX_FMC_Init();
   MX_LTDC_Init();
   MX_DMA2D_Init();
+  MX_ADC1_Init();
+  MX_ADC2_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -221,6 +248,9 @@ int main(void)
   /* Create the queue(s) */
   /* creation of myQueue01 */
   myQueue01Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue01_attributes);
+
+  /* creation of myQueue02 */
+  myQueue02Handle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue02_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -255,6 +285,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -310,6 +341,110 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_8B;
+  hadc1.Init.ScanConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_13;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief ADC2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC2_Init(void)
+{
+
+  /* USER CODE BEGIN ADC2_Init 0 */
+
+  /* USER CODE END ADC2_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC2_Init 1 */
+
+  /* USER CODE END ADC2_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc2.Instance = ADC2;
+  hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc2.Init.Resolution = ADC_RESOLUTION_8B;
+  hadc2.Init.ScanConvMode = DISABLE;
+  hadc2.Init.ContinuousConvMode = DISABLE;
+  hadc2.Init.DiscontinuousConvMode = DISABLE;
+  hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc2.Init.NbrOfConversion = 1;
+  hadc2.Init.DMAContinuousRequests = DISABLE;
+  hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_5;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC2_Init 2 */
+
+  /* USER CODE END ADC2_Init 2 */
+
 }
 
 /**
@@ -1006,7 +1141,7 @@ void LCD_Delay(uint32_t Delay)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument) // task xu li nut bam
+void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
@@ -1082,73 +1217,58 @@ void StartDefaultTask(void *argument) // task xu li nut bam
 * @retval None
 */
 /* USER CODE END Header_StartTask03 */
-void StartTask03(void *argument) //task xu li joysticks(lay thong so tu file setup.txt)
+void StartTask03(void *argument)
 {
   /* USER CODE BEGIN StartTask03 */
   /* Infinite loop */
   for(;;)
   {
-//			HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
-//			HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
-//			HAL_ADC_PollForConversion(&hadc1, 10);
-//			HAL_ADC_PollForConversion(&hadc2, 10);
-//			int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
-//			int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
-//			uint8_t buttonPressed = 0;
-//			uint8_t left_buttonPressed = 0;
-//			uint8_t right_buttonPressed = 0;
-//			uint8_t up_buttonPressed = 0;
-//			uint8_t down_buttonPressed = 0;
-//		    GPIO_PinState left_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2);
-//		    GPIO_PinState right_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3);
-//		    GPIO_PinState up_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13);
-//		    GPIO_PinState down_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12);
-//		    GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-//
-//		    // Xử lý nút nhấn chính (trên PA0)
-//		    if ( X = 0 && Y == 0) {
-//		        buttonPressed = 1;
-//		        move_cmd = 3;
-//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-//		    } else if (state == GPIO_PIN_SET) {
-//		        buttonPressed = 0;
-//		    }
-//
-//		    // Xử lý nút trái
-//		    if () {
-//		        left_buttonPressed = 1;
-//		        move_cmd = 2; // MOVE_LEFT
-//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-//		    } else if (left_button_state == GPIO_PIN_SET) {
-//		        left_buttonPressed = 0;
-//		    }
-//
-//		    // Xử lý nút phải
-//		    if () {
-//		        right_buttonPressed = 1;
-//		        move_cmd = 1; // MOVE_RIGHT
-//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-//		    } else if (right_button_state == GPIO_PIN_SET) {
-//		        right_buttonPressed = 0;
-//		    }
-//
-//		    // Xử lý nút lên
-//		    if () {
-//		        up_buttonPressed = 1;
-//		        move_cmd = 3; // MOVE_UP
-//		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-//		    } else if (up_button_state == GPIO_PIN_SET) {
-//		        up_buttonPressed = 0;
-//		    }
-//
-//		    // Xử lý nút xuống
-//		    if () {
-//		   	        down_buttonPressed = 1;
-//		   	        move_cmd = 4; // MOVE_UP
-//		   	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-//		   	    } else if (down_button_state == GPIO_PIN_SET) {
-//		   	        down_buttonPressed = 0;
-//		   	    }
+			HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
+			HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
+			HAL_ADC_PollForConversion(&hadc1, 10);
+			HAL_ADC_PollForConversion(&hadc2, 10);
+			int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
+			int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
+			uint8_t left_buttonPressed = 0;
+			uint8_t right_buttonPressed = 0;
+			uint8_t up_buttonPressed = 0;
+			uint8_t down_buttonPressed = 0;
+			uint8_t move_cmd = 0;
+		    // Xử lý nút trái
+		    if (Joysticks(X,Y,2 ) && left_buttonPressed == 0) {
+		        left_buttonPressed = 1;
+		        move_cmd = 2; // MOVE_LEFT
+		        osMessageQueuePut(myQueue02Handle, &move_cmd, 0, 10);
+		    } else if (Joysticks(X,Y,2)) {
+		        left_buttonPressed = 0;
+		    }
+
+		    // Xử lý nút phải
+		    if (Joysticks(X,Y,1) && right_buttonPressed == 0) {
+		        right_buttonPressed = 1;
+		        move_cmd = 1; // MOVE_RIGHT
+		        osMessageQueuePut(myQueue02Handle, &move_cmd, 0, 10);
+		    } else if (Joysticks(X,Y,1)) {
+		        right_buttonPressed = 0;
+		    }
+
+		    // Xử lý nút lên
+		    if (Joysticks(X,Y,3) && up_buttonPressed == 0) {
+		        up_buttonPressed = 1;
+		        move_cmd = 3; // MOVE_UP
+		        osMessageQueuePut(myQueue02Handle, &move_cmd, 0, 10);
+		    } else if (Joysticks(X,Y,3)) {
+		        up_buttonPressed = 0;
+		    }
+
+		    // Xử lý nút xuống
+		    if (!Joysticks(X,Y,4) && down_buttonPressed == 0) {
+		   	        down_buttonPressed = 1;
+		   	        move_cmd = 4; // MOVE_UP
+		   	        osMessageQueuePut(myQueue02Handle, &move_cmd, 0, 10);
+		   	    } else if (Joysticks(X,Y,4)) {
+		   	        down_buttonPressed = 0;
+		   	    }
 
 		    osDelay(10);
   }
@@ -1156,6 +1276,7 @@ void StartTask03(void *argument) //task xu li joysticks(lay thong so tu file set
 
   /* USER CODE END StartTask03 */
 }
+
 /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM6 interrupt took place, inside
