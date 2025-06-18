@@ -19,8 +19,8 @@ void StartGameView::tearDownScreen()
     StartGameViewBase::tearDownScreen();
 }
 
-void StartGameView::chooseMode() {
-	application().gotoGameMenuScreenNoTransition();
+void StartGameView::goToMenu() {
+	application().gotoMenu1ScreenNoTransition();
 }
 
 void StartGameView::handleTickEvent() {
@@ -31,8 +31,8 @@ void StartGameView::handleTickEvent() {
     uint8_t res;
 	if (osMessageQueueGetCount(myQueue01Handle) > 0) {
 		osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-		if (res == 'T') {
-			chooseMode();
+		if (res == 2) {
+			goToMenu();
 		}
 	}
     if (tickCountStart % 5 == 0) {

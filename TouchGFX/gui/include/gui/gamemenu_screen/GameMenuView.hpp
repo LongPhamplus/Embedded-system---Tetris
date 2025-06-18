@@ -19,7 +19,8 @@ protected:
     bool startAnimation = false;
 
     void startGame();
-    void chooseMode();
+    void chooseMode1();
+    void chooseMode2();
 };
 
 #endif // GAMEMENUVIEW_HPP

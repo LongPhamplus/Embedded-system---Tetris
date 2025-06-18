@@ -1,5 +1,5 @@
 Application/User/generated/FrontendApplicationBase.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
+ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp \
@@ -60,9 +60,6 @@ Application/User/generated/FrontendApplicationBase.o: \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp \
  ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
@@ -70,6 +67,12 @@ Application/User/generated/FrontendApplicationBase.o: \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp \
  ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp
@@ -133,9 +136,6 @@ Application/User/generated/FrontendApplicationBase.o: \
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:
@@ -143,6 +143,12 @@ Application/User/generated/FrontendApplicationBase.o: \
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp:
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:
 ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:

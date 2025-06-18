@@ -8,9 +8,9 @@
 #include <mvp/View.hpp>
 #include <gui/gameboard_screen/GameBoardPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class GameBoardViewBase : public touchgfx::View<GameBoardPresenter>
 {
@@ -27,18 +27,6 @@ public:
     {
         // Override and implement this function in GameBoard
     }
-    virtual void handleRight()
-    {
-        // Override and implement this function in GameBoard
-    }
-    virtual void handleLeft()
-    {
-        // Override and implement this function in GameBoard
-    }
-    virtual void handleDown()
-    {
-        // Override and implement this function in GameBoard
-    }
 
 protected:
     FrontendApplication& application() {
@@ -49,11 +37,9 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::TextArea textArea1;
+    touchgfx::Image image1;
     touchgfx::TextAreaWithOneWildcard textArea2;
-    touchgfx::ButtonWithLabel goLeft;
-    touchgfx::ButtonWithLabel goRight;
-    touchgfx::ButtonWithLabel goDown;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers
@@ -62,16 +48,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<GameBoardViewBase, const touchgfx::AbstractButton&> buttonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

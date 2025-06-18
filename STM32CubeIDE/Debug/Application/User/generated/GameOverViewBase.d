@@ -1,5 +1,5 @@
 Application/User/generated/GameOverViewBase.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp \
+ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
@@ -46,14 +46,14 @@ Application/User/generated/GameOverViewBase.o: \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
- ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
- ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp
+ ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
+ ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
@@ -100,11 +100,11 @@ Application/User/generated/GameOverViewBase.o: \
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
-../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:

@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:28:13:StartGamePresenter::~StartGamePresenter()	1
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGamePresenter.cpp:10:6:virtual void StartGamePresenter::activate()	1
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGamePresenter.cpp:10:6:virtual void StartGamePresenter::activate()	1
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:28:13:virtual StartGamePresenter::~StartGamePresenter()	1
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:28:13:virtual void* StartGamePresenter::_ZThn4_N18StartGamePresenterD1Ev()	1
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGamePresenter.cpp:4:1:StartGamePresenter::StartGamePresenter(StartGameView&)	1
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGamePresenter.cpp:4:1:StartGamePresenter::StartGamePresenter(StartGameView&)	1

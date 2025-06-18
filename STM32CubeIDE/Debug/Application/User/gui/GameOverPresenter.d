@@ -1,5 +1,5 @@
 Application/User/gui/GameOverPresenter.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameover_screen/GameOverPresenter.cpp \
+ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gameover_screen/GameOverPresenter.cpp \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -47,11 +47,11 @@ Application/User/gui/GameOverPresenter.o: \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -99,8 +99,8 @@ Application/User/gui/GameOverPresenter.o: \
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:

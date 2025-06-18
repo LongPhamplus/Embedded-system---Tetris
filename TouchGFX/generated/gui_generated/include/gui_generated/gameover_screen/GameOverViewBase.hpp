@@ -8,8 +8,8 @@
 #include <mvp/View.hpp>
 #include <gui/gameover_screen/GameOverPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class GameOverViewBase : public touchgfx::View<GameOverPresenter>
 {
@@ -17,6 +17,15 @@ public:
     GameOverViewBase();
     virtual ~GameOverViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void tickEvent()
+    {
+        // Override and implement this function in GameOver
+    }
 
 protected:
     FrontendApplication& application() {
@@ -27,8 +36,9 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::Image image3;
     touchgfx::Image image1;
+    touchgfx::TextAreaWithOneWildcard textArea1;
 
     /*
      * Wildcard Buffers

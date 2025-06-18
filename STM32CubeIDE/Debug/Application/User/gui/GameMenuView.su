@@ -1,11 +1,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:18:6:virtual void GameMenuView::tearDownScreen()	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:18:6:virtual void GameMenuView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/gamemenu_screen/GameMenuView.hpp:11:13:GameMenuView::~GameMenuView()	8	static
 ../../TouchGFX/gui/include/gui/gamemenu_screen/GameMenuView.hpp:11:13:virtual GameMenuView::~GameMenuView()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:5:1:GameMenuView::GameMenuView()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:23:6:void GameMenuView::chooseMode()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:36:6:void GameMenuView::startGame()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:13:6:virtual void GameMenuView::setupScreen()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:40:6:virtual void GameMenuView::tickEvent()	24	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:5:1:GameMenuView::GameMenuView()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:23:6:void GameMenuView::chooseMode1()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:35:6:void GameMenuView::chooseMode2()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:47:6:void GameMenuView::startGame()	8	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:13:6:virtual void GameMenuView::setupScreen()	0	static
+C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gamemenu_screen/GameMenuView.cpp:51:6:virtual void GameMenuView::tickEvent()	24	static

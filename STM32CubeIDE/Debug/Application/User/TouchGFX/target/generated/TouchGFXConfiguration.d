@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/target/generated/TouchGFXConfiguration.cpp \
+ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/target/generated/TouchGFXConfiguration.cpp \
  ../../TouchGFX/generated/texts/include/texts/TypedTextDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
@@ -63,9 +63,6 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp \
  ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
@@ -73,6 +70,12 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp \
  ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
@@ -181,9 +184,6 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp:
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:
@@ -191,6 +191,12 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp:
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGamePresenter.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1View.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp:
+../../TouchGFX/gui/include/gui/menu1_screen/Menu1Presenter.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScoreView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp:
+../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:
 ../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:

@@ -100,7 +100,7 @@ protected:
 	void rotate();
 	void gameOver();
 	int clearFullRows();
-
+	void Ring(uint8_t duration);
 	// Move Tetromino
 	/* virtual button */
 	void goRight();

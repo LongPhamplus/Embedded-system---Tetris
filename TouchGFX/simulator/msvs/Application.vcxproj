@@ -36,6 +36,12 @@
     <ClCompile Include="..\..\gui\src\startgame_screen\StartGamePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\startgame_screen\StartGameView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\startgame_screen\StartGameViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu1_screen\Menu1Presenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu1_screen\Menu1View.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\menu1_screen\Menu1ViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\highscore_screen\HighScorePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\highscore_screen\HighScoreView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\highscore_screen\HighScoreViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -200,6 +206,12 @@
     <ClInclude Include="..\..\gui\include\gui\startgame_screen\StartGamePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\startgame_screen\StartGameView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startgame_screen\StartGameViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu1_screen\Menu1Presenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu1_screen\Menu1View.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\menu1_screen\Menu1ViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\highscore_screen\HighScorePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\highscore_screen\HighScoreView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\highscore_screen\HighScoreViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

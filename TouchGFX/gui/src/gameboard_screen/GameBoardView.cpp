@@ -4,9 +4,9 @@
 #include "stm32f4xx.h"
 
 extern osMessageQueueId_t myQueue01Handle;
+extern osMessageQueueId_t myQueue02Handle;
 extern int score;
 extern int mode;
-
 GameBoardView::GameBoardView()
 {
 	for (int y = 0; y < ROWS; y++) {
@@ -64,6 +64,15 @@ void GameBoardView::tearDownScreen()
 
 uint32_t GameBoardView::my_rand() {
 	return HAL_GetTick() ^ SysTick->VAL;
+}
+void GameBoardView::Ring(uint8_t duration)
+{
+	HAL_Delay(20);
+	while(duration --){
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,GPIO_PIN_SET);
+		HAL_Delay(10);
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,GPIO_PIN_RESET);
+	}
 }
 
 void delay_ms(uint32_t ms) {
@@ -215,9 +224,8 @@ int GameBoardView::clearFullRows() {
 	            break;
 	        }
 	    }
-
 	    if (full) {
-
+	    	Ring(1);
 	        for (int row = y; row > 0; row--) {
 	            for (int col = 1; col < COLS - 1; col++) {
 	                grid[row][col] = grid[row - 1][col];
@@ -406,25 +414,42 @@ void GameBoardView::updateBlocks()
 void GameBoardView::tickEvent()
 {
     tickCount++;
-    if (score < 20) {
+    if ((score + 1) * mode < 20) {
 		if (tickCount % ((6 - mode) * 3) == 0) {
 			autoDrop();
 		}
-    } else if (score < 40) {
+    } else if ((score + 1) * mode < 60 ) {
     	if (tickCount % ((5 - mode) * 3) == 0) {
 			autoDrop();
 		}
-    } else {
+    } else if ((score + 1) * mode < 90){
     	if (tickCount % ((4 - mode) * 3) == 0) {
 			autoDrop();
 		}
+    } else {
+    	if (tickCount % ((3 - mode) * 3) == 0) {
+			autoDrop();
+    }
     }
 
     uint8_t res;
     if (osMessageQueueGetCount(myQueue01Handle) > 0) {
     	osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-    	if (res == 'T') {
+    	switch(res){
+    	case 1:
+    		handleRight();
+    		break;
+    	case 2:
+    		handleLeft();
+    		break;
+    	case 3:
     		rotate();
+    		break;
+    	case 4:
+    		handleDown();
+    		break;
+    	default:
+    		break;
     	}
     }
     updateBlocks();

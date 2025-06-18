@@ -11,9 +11,12 @@ public:
     virtual ~GameOverView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void tickEvent();
+    virtual void goToMenu();
 protected:
 
     void updateScore();
+
 };
 
 #endif // GAMEOVERVIEW_HPP
