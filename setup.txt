@@ -21,4 +21,3 @@ Thông số của Joysticks:X :;Y:;
 	Phải:X = 129;Y = 62;
 	Lên:X = 195;Y = 129;
 	Xuống:X = 60;Y = 129;
-	 
