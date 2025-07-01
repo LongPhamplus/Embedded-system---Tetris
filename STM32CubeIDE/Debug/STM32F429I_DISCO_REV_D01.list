@@ -41,13 +41,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  18 TouchGFX_Framebuffer 00070800  d0000000  d0000000  00198000  2**2
                   ALLOC
- 19 .debug_line   00064cc3  00000000  00000000  001973b0  2**0
+ 19 .debug_line   00064cc4  00000000  00000000  001973b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_line_str 0000006a  00000000  00000000  001fc073  2**0
+ 20 .debug_line_str 0000006a  00000000  00000000  001fc074  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_info   00104047  00000000  00000000  001fc0dd  2**0
+ 21 .debug_info   00104048  00000000  00000000  001fc0de  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_abbrev 0001d7a0  00000000  00000000  00300124  2**0
+ 22 .debug_abbrev 0001d7a0  00000000  00000000  00300126  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  23 .debug_aranges 00003bb0  00000000  00000000  0031d8c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -4295,7 +4295,7 @@ void StartTask03(void *argument)
  8001878:	4620      	mov	r0, r4
  800187a:	f7ff ffbf 	bl	80017fc <Joysticks>
  800187e:	2800      	cmp	r0, #0
- 8001880:	d14f      	bne.n	8001922 <StartTask03+0xe2>
+ 8001880:	d150      	bne.n	8001924 <StartTask03+0xe4>
 			uint8_t move_cmd = 0;
  8001882:	f88d 000f 	strb.w	r0, [sp, #15]
 		    } else if (Joysticks(X,Y,2)) {
@@ -4393,24 +4393,23 @@ void StartTask03(void *argument)
  8001914:	480e      	ldr	r0, [pc, #56]	@ (8001950 <StartTask03+0x110>)
  8001916:	f006 fcae 	bl	8008276 <HAL_UART_Transmit>
 
-		    osDelay(100);
- 800191a:	2064      	movs	r0, #100	@ 0x64
- 800191c:	f006 fe0e 	bl	800853c <osDelay>
+		    osDelay(400);
+ 800191a:	f44f 70c8 	mov.w	r0, #400	@ 0x190
+ 800191e:	f006 fe0d 	bl	800853c <osDelay>
   {
- 8001920:	e792      	b.n	8001848 <StartTask03+0x8>
+ 8001922:	e791      	b.n	8001848 <StartTask03+0x8>
 		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
- 8001922:	4808      	ldr	r0, [pc, #32]	@ (8001944 <StartTask03+0x104>)
+ 8001924:	4807      	ldr	r0, [pc, #28]	@ (8001944 <StartTask03+0x104>)
 		        move_cmd = 2; // MOVE_LEFT
- 8001924:	2302      	movs	r3, #2
- 8001926:	f88d 300f 	strb.w	r3, [sp, #15]
+ 8001926:	2302      	movs	r3, #2
+ 8001928:	f88d 300f 	strb.w	r3, [sp, #15]
 		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
- 800192a:	2200      	movs	r2, #0
- 800192c:	230a      	movs	r3, #10
- 800192e:	f10d 010f 	add.w	r1, sp, #15
- 8001932:	6800      	ldr	r0, [r0, #0]
- 8001934:	f006 fef1 	bl	800871a <osMessageQueuePut>
- 8001938:	e7a5      	b.n	8001886 <StartTask03+0x46>
- 800193a:	bf00      	nop
+ 800192c:	2200      	movs	r2, #0
+ 800192e:	230a      	movs	r3, #10
+ 8001930:	f10d 010f 	add.w	r1, sp, #15
+ 8001934:	6800      	ldr	r0, [r0, #0]
+ 8001936:	f006 fef0 	bl	800871a <osMessageQueuePut>
+ 800193a:	e7a4      	b.n	8001886 <StartTask03+0x46>
  800193c:	2000af14 	.word	0x2000af14
  8001940:	2000aecc 	.word	0x2000aecc
  8001944:	2000aca4 	.word	0x2000aca4
@@ -12190,8 +12189,8 @@ void GameBoardView::tickEvent()
     	default:
     		break;
     	}
-    	osDelay(100);
- 8004a9a:	2064      	movs	r0, #100	@ 0x64
+    	osDelay(200);
+ 8004a9a:	20c8      	movs	r0, #200	@ 0xc8
  8004a9c:	f003 fd4e 	bl	800853c <osDelay>
     }
     updateBlocks();

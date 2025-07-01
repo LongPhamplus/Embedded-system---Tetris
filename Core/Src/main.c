@@ -1340,7 +1340,7 @@ void StartTask03(void *argument)
 		    snprintf(buffer, sizeof(buffer), "X: %d \tY: %d \tDirection: %s\r\n", X, Y, MoveCommandStr[move_cmd]);
 		    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 
-		    osDelay(100);
+		    osDelay(400);
   }
 
 
