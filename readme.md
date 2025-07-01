@@ -27,4 +27,6 @@ Performance testing can be done using the GPIO pins designated with the followin
 5. Click **run**  button in STM32CubeIDE to build and run the project.
 
 6. The Tetris game will run on your STM32 device. Enjoy !
-7.Tất cả các setup dây,chân in/out đều có trong file setup.txt
+   
+***Note that the board configuration can be found in setup.txt"
+
