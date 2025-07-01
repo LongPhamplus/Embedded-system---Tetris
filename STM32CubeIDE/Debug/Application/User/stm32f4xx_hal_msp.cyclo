@@ -11,5 +11,7 @@ D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:364:6:HAL_L
 D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:490:6:HAL_LTDC_MspDeInit	2
 D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:552:6:HAL_SPI_MspInit	2
 D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:590:6:HAL_SPI_MspDeInit	2
-D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:722:6:HAL_SDRAM_MspInit	2
-D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:808:6:HAL_SDRAM_MspDeInit	2
+D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:620:6:HAL_UART_MspInit	2
+D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:657:6:HAL_UART_MspDeInit	2
+D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:788:6:HAL_SDRAM_MspInit	2
+D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/stm32f4xx_hal_msp.c:874:6:HAL_SDRAM_MspDeInit	2

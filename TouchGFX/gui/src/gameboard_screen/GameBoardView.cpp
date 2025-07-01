@@ -453,6 +453,7 @@ void GameBoardView::tickEvent()
     	default:
     		break;
     	}
+    	osDelay(200);
     }
     updateBlocks();
 }
