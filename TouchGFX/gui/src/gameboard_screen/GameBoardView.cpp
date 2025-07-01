@@ -435,25 +435,27 @@ void GameBoardView::tickEvent()
     }
 
     uint8_t res;
-    if (osMessageQueueGetCount(myQueue01Handle) > 0) {
-    	osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-    	switch(res){
-    	case 1:
-    		handleRight();
-    		break;
-    	case 2:
-    		handleLeft();
-    		break;
-    	case 3:
-    		rotate();
-    		break;
-    	case 4:
-    		handleDown();
-    		break;
-    	default:
-    		break;
-    	}
-    	osDelay(200);
+    if (tickCount % 10 == 0) {
+	    if (osMessageQueueGetCount(myQueue01Handle) > 0) {
+	    	osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
+	    	switch(res){
+	    	case 1:
+	    		handleRight();
+	    		break;
+	    	case 2:
+	    		handleLeft();
+	    		break;
+	    	case 3:
+	    		rotate();
+	    		break;
+	    	case 4:
+	    		handleDown();
+	    		break;
+	    	default:
+	    		break;
+	    	}
+	    	
+	    }
     }
     updateBlocks();
 }
