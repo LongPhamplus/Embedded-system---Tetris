@@ -26,13 +26,13 @@
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp:25:18:virtual void GameOverViewBase::tickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<GameOverPresenter>::~View()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:33:1:GameOverViewBase::~GameOverViewBase()	1
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:38:6:virtual void GameOverViewBase::setupScreen()	1
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:43:6:virtual void GameOverViewBase::handleTickEvent()	1
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:33:1:GameOverViewBase::~GameOverViewBase()	1
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:38:6:virtual void GameOverViewBase::setupScreen()	1
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:43:6:virtual void GameOverViewBase::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<GameOverPresenter>::~View()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	1
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:33:1:virtual GameOverViewBase::~GameOverViewBase()	1
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:33:1:virtual GameOverViewBase::~GameOverViewBase()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
@@ -41,4 +41,4 @@ C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/sr
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	1
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:9:1:GameOverViewBase::GameOverViewBase()	1
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameover_screen/GameOverViewBase.cpp:9:1:GameOverViewBase::GameOverViewBase()	1

@@ -1,5 +1,5 @@
 Application/User/generated/StartGameViewBase.o: \
- C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp \
+ D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

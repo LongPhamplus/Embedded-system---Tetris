@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:28:13:GameBoardPresenter::~GameBoardPresenter()	0	static
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardPresenter.cpp:10:6:virtual void GameBoardPresenter::activate()	0	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardPresenter.cpp:10:6:virtual void GameBoardPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:28:13:virtual GameBoardPresenter::~GameBoardPresenter()	8	static
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardPresenter.hpp:28:13:virtual void* GameBoardPresenter::_ZThn4_N18GameBoardPresenterD1Ev()	0	static
-C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardPresenter.cpp:4:1:GameBoardPresenter::GameBoardPresenter(GameBoardView&)	0	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardPresenter.cpp:4:1:GameBoardPresenter::GameBoardPresenter(GameBoardView&)	0	static
