@@ -1,5 +1,5 @@
 Application/User/freertos.o: \
- D:/Desktop/IoT/Embedded-system---Tetris/Core/Src/freertos.c \
+ C:/TouchGFXProjects/Tetris/Core/Src/freertos.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:28:13:HighScorePresenter::~HighScorePresenter()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/highscore_screen/HighScorePresenter.cpp:10:6:virtual void HighScorePresenter::activate()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/highscore_screen/HighScorePresenter.cpp:10:6:virtual void HighScorePresenter::activate()	1
 ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:28:13:virtual HighScorePresenter::~HighScorePresenter()	1
 ../../TouchGFX/gui/include/gui/highscore_screen/HighScorePresenter.hpp:28:13:virtual void* HighScorePresenter::_ZThn4_N18HighScorePresenterD1Ev()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/highscore_screen/HighScorePresenter.cpp:4:1:HighScorePresenter::HighScorePresenter(HighScoreView&)	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/highscore_screen/HighScorePresenter.cpp:4:1:HighScorePresenter::HighScorePresenter(HighScoreView&)	1

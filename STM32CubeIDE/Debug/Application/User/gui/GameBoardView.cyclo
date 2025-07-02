@@ -12,28 +12,28 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:703:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:60:6:virtual void GameBoardView::tearDownScreen()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:60:6:virtual void GameBoardView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardView.hpp:69:13:GameBoardView::~GameBoardView()	2
 ../../TouchGFX/gui/include/gui/gameboard_screen/GameBoardView.hpp:69:13:virtual GameBoardView::~GameBoardView()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:65:10:uint32_t GameBoardView::my_rand()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:68:6:void GameBoardView::Ring(uint8_t)	2
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:80:6:void delay_ms(uint32_t)	2
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:86:6:void GameBoardView::gameOver()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:115:6:bool GameBoardView::checkCollision(int, int)	7
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:90:6:void GameBoardView::rotate()	7
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:130:6:void GameBoardView::spawnPiece()	6
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:189:6:void GameBoardView::goRight()	2
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:195:6:void GameBoardView::goLeft()	2
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:201:6:void GameBoardView::goDown()	2
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:206:6:void GameBoardView::handleRight()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:210:6:void GameBoardView::handleLeft()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:214:6:void GameBoardView::handleDown()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:217:5:int GameBoardView::clearFullRows()	6
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:166:6:void GameBoardView::autoDrop()	7
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:254:6:void GameBoardView::updateBlocks()	15
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:416:6:virtual void GameBoardView::tickEvent()	13
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:10:1:GameBoardView::GameBoardView()	10
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:54:6:virtual void GameBoardView::setupScreen()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:65:10:uint32_t GameBoardView::my_rand()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:68:6:void GameBoardView::Ring(uint8_t)	2
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:80:6:void delay_ms(uint32_t)	2
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:86:6:void GameBoardView::gameOver()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:115:6:bool GameBoardView::checkCollision(int, int)	7
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:90:6:void GameBoardView::rotate()	7
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:130:6:void GameBoardView::spawnPiece()	6
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:189:6:void GameBoardView::goRight()	2
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:195:6:void GameBoardView::goLeft()	2
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:201:6:void GameBoardView::goDown()	2
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:206:6:void GameBoardView::handleRight()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:210:6:void GameBoardView::handleLeft()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:214:6:void GameBoardView::handleDown()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:217:5:int GameBoardView::clearFullRows()	6
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:166:6:void GameBoardView::autoDrop()	7
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:254:6:void GameBoardView::updateBlocks()	15
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:416:6:virtual void GameBoardView::tickEvent()	13
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:10:1:GameBoardView::GameBoardView()	10
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/gameboard_screen/GameBoardView.cpp:54:6:virtual void GameBoardView::setupScreen()	1

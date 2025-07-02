@@ -16,7 +16,7 @@ GameMenuViewBase::GameMenuViewBase()
     image1_1_2.setBitmap(touchgfx::Bitmap(BITMAP_BLANK_WHITE_BACKGROUND_XBSFZSLTJKSFOMPA_ID));
     add(image1_1_2);
 
-    image1_2.setXY(-406, -200);
+    image1_2.setXY(-402, -189);
     image1_2.setBitmap(touchgfx::Bitmap(BITMAP_BLANK_WHITE_BACKGROUND_XBSFZSLTJKSFOMPA_ID));
     add(image1_2);
 

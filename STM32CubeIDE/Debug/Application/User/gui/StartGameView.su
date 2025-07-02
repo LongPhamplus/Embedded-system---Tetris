@@ -1,11 +1,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp:25:18:virtual void StartGameViewBase::tickEvent()	0	static
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:17:6:virtual void StartGameView::tearDownScreen()	0	static
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:17:6:virtual void StartGameView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp:11:13:StartGameView::~StartGameView()	8	static
 ../../TouchGFX/gui/include/gui/startgame_screen/StartGameView.hpp:11:13:virtual StartGameView::~StartGameView()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:5:1:StartGameView::StartGameView()	8	static
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:22:6:void StartGameView::goToMenu()	8	static
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:12:6:virtual void StartGameView::setupScreen()	0	static
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:26:6:virtual void StartGameView::handleTickEvent()	24	static
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:5:1:StartGameView::StartGameView()	8	static
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:22:6:void StartGameView::goToMenu()	8	static
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:12:6:virtual void StartGameView::setupScreen()	0	static
+C:/TouchGFXProjects/Tetris/TouchGFX/gui/src/startgame_screen/StartGameView.cpp:26:6:virtual void StartGameView::handleTickEvent()	24	static

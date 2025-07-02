@@ -1,5 +1,5 @@
 Application/User/generated/GameBoardViewBase.o: \
- D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp \
+ C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gameboard_screen/GameBoardViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameboard_screen/GameBoardViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

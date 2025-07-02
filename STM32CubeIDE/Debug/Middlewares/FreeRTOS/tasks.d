@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/tasks.o: \
- D:/Desktop/IoT/Embedded-system---Tetris/Middlewares/Third_Party/FreeRTOS/Source/tasks.c \
+ C:/TouchGFXProjects/Tetris/Middlewares/Third_Party/FreeRTOS/Source/tasks.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

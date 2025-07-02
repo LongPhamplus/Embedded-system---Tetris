@@ -20,7 +20,7 @@ GameOverViewBase::GameOverViewBase()
     image1.setBitmap(touchgfx::Bitmap(BITMAP_GAME_OVER_ID));
     add(image1);
 
-    textArea1.setXY(108, 178);
+    textArea1.setXY(44, 179);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(224, 76, 65));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T_OVERSCORE).getText());

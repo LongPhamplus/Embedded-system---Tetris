@@ -18,14 +18,14 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startgame_screen/StartGameViewBase.hpp:25:18:virtual void StartGameViewBase::tickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<StartGamePresenter>::~View()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:26:1:StartGameViewBase::~StartGameViewBase()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:31:6:virtual void StartGameViewBase::setupScreen()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:36:6:virtual void StartGameViewBase::handleTickEvent()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:26:1:StartGameViewBase::~StartGameViewBase()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:31:6:virtual void StartGameViewBase::setupScreen()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:36:6:virtual void StartGameViewBase::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<StartGamePresenter>::~View()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:26:1:virtual StartGameViewBase::~StartGameViewBase()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:26:1:virtual StartGameViewBase::~StartGameViewBase()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	1
-D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:9:1:StartGameViewBase::StartGameViewBase()	1
+C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/startgame_screen/StartGameViewBase.cpp:9:1:StartGameViewBase::StartGameViewBase()	1

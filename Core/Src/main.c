@@ -123,13 +123,13 @@ int Joysticks(int X, int Y, int cmd) {
 
     switch(cmd) {
     case 4:
-        return ((X > threshold[1] - deviation) && (X < threshold[1] + deviation) && (Y > threshold[3] - deviation) && (Y < threshold[3] + deviation));
+        return ((X >= threshold[1] - deviation) && (X <= threshold[1] + deviation) && (Y >= threshold[3] - deviation) && (Y <= threshold[3] + deviation));
     case 3:
-        return ((X > threshold[1] - deviation) && (X < threshold[1] + deviation) && (Y > threshold[5] - deviation) && (Y < threshold[5] + deviation));
+        return ((X >= threshold[1] - deviation) && (X <= threshold[1] + deviation) && (Y >= threshold[5] - deviation) && (Y <= threshold[5] + deviation));
     case 2:
-    	return ((X > threshold[0] - deviation) && (X < threshold[0] + deviation) && (Y > threshold[4] - deviation) && (Y < threshold[4] + deviation));
+    	return ((X >= threshold[0] - deviation) && (X <= threshold[0] + deviation) && (Y >= threshold[4] - deviation) && (Y <= threshold[4] + deviation));
     case 1:
-        return ((X > threshold[2] - deviation) && (X < threshold[2] + deviation) && (Y > threshold[4] - deviation) && (Y < threshold[4] + deviation));
+        return ((X >= threshold[2] - deviation) && (X <= threshold[2] + deviation) && (Y >= threshold[4] - deviation) && (Y <= threshold[4] + deviation));
     default:
         return 0;
     }
@@ -190,7 +190,7 @@ static LCD_DrvTypeDef* LcdDrv;
 extern UART_HandleTypeDef huart1;
 
 int score = 0;
-int mode = 3;
+int mode = 1;
 int high_score = 0;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
@@ -1194,75 +1194,7 @@ void LCD_Delay(uint32_t Delay)
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
-{
-  /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-	uint8_t move_cmd = 0;
-	uint8_t buttonPressed = 0;
-	uint8_t left_buttonPressed = 0;
-	uint8_t right_buttonPressed = 0;
-	uint8_t up_buttonPressed = 0;
-	uint8_t down_buttonPressed = 0;
-	for(;;)
-	{
-	    GPIO_PinState left_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2);
-	    GPIO_PinState right_button_state = HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3);
-	    GPIO_PinState up_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13);
-	    GPIO_PinState down_button_state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12);
-	    GPIO_PinState state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 
-	    // Xử lý nút nhấn chính (trên PA0)
-	    if (state == GPIO_PIN_RESET && buttonPressed == 0) {
-	        buttonPressed = 1;
-	        move_cmd = 3;
-	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-	    } else if (state == GPIO_PIN_SET) {
-	        buttonPressed = 0;
-	    }
-
-	    // Xử lý nút trái
-	    if (left_button_state == GPIO_PIN_RESET && left_buttonPressed == 0) {
-	        left_buttonPressed = 1;
-	        move_cmd = 2; // MOVE_LEFT
-	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-	    } else if (left_button_state == GPIO_PIN_SET) {
-	        left_buttonPressed = 0;
-	    }
-
-	    // Xử lý nút phải
-	    if (right_button_state == GPIO_PIN_RESET && right_buttonPressed == 0) {
-	        right_buttonPressed = 1;
-	        move_cmd = 1; // MOVE_RIGHT
-	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-	    } else if (right_button_state == GPIO_PIN_SET) {
-	        right_buttonPressed = 0;
-	    }
-
-	    // Xử lý nút lên
-	    if (up_button_state == GPIO_PIN_RESET && up_buttonPressed == 0) {
-	        up_buttonPressed = 1;
-	        move_cmd = 3; // MOVE_UP
-	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-	    } else if (up_button_state == GPIO_PIN_SET) {
-	        up_buttonPressed = 0;
-	    }
-
-	    // Xử lý nút xuống
-	    if (down_button_state == GPIO_PIN_RESET && down_buttonPressed == 0) {
-	   	        down_buttonPressed = 1;
-	   	        move_cmd = 4; // MOVE_UP
-	   	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-	   	    } else if (down_button_state == GPIO_PIN_SET) {
-	   	        down_buttonPressed = 0;
-	   	    }
-
-	    osDelay(10);
-	}
-
-  /* USER CODE END 5 */
-}
 
 const char *MoveCommandStr[] = {
     "IDLE",     // 0
@@ -1271,6 +1203,79 @@ const char *MoveCommandStr[] = {
     "UP",       // 3
     "DOWN"      // 4
 };
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+	char buffer[64];
+  /* Infinite loop */
+	/*
+	uint8_t move_cmd = 0;
+	uint8_t buttonPressed = 0;
+	uint8_t left_buttonPressed = 0;
+	uint8_t right_buttonPressed = 0;
+	uint8_t up_buttonPressed = 0;
+	uint8_t down_buttonPressed = 0;
+	*/
+	for(;;)
+	{
+		HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
+		HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
+		HAL_ADC_PollForConversion(&hadc1, 10);
+		HAL_ADC_PollForConversion(&hadc2, 10);
+		int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
+		int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
+		uint8_t left_buttonPressed = 0;
+		uint8_t right_buttonPressed = 0;
+		uint8_t up_buttonPressed = 0;
+		uint8_t down_buttonPressed = 0;
+		uint8_t move_cmd = 0;
+
+		// Xử lý nút trái
+		if (Joysticks(X,Y,2 ) && left_buttonPressed == 0) {
+			left_buttonPressed = 1;
+			move_cmd = 2; // MOVE_LEFT
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,2)) {
+			left_buttonPressed = 0;
+		}
+
+		// Xử lý nút phải
+		if (Joysticks(X,Y,1) && right_buttonPressed == 0) {
+			right_buttonPressed = 1;
+			move_cmd = 1; // MOVE_RIGHT
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,1)) {
+			right_buttonPressed = 0;
+		}
+
+		// Xử lý nút lên
+		if (Joysticks(X,Y,3) && up_buttonPressed == 0) {
+			up_buttonPressed = 1;
+			move_cmd = 3; // MOVE_UP
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,3)) {
+			up_buttonPressed = 0;
+		}
+
+		// Xử lý nút xuống
+		if (Joysticks(X,Y,4) && down_buttonPressed == 0) {
+				down_buttonPressed = 1;
+				move_cmd = 4; // MOVE_DOWN
+				osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+			} else if (Joysticks(X,Y,4)) {
+				down_buttonPressed = 0;
+			}
+
+		snprintf(buffer, sizeof(buffer), "X: %d \tY: %d \tDirection: %s\r\n", X, Y, MoveCommandStr[move_cmd]);
+		HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+
+		osDelay(400);
+	}
+
+  /* USER CODE END 5 */
+}
+
 /* USER CODE BEGIN Header_StartTask03 */
 /**
 * @brief Function implementing the myTask02 thread.
@@ -1284,64 +1289,62 @@ void StartTask03(void *argument)
   /* USER CODE BEGIN StartTask03 */
 	char buffer[64];
   /* Infinite loop */
-  for(;;)
-  {
-			HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
-			HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
-			HAL_ADC_PollForConversion(&hadc1, 10);
-			HAL_ADC_PollForConversion(&hadc2, 10);
-			int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
-			int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
-			uint8_t left_buttonPressed = 0;
-			uint8_t right_buttonPressed = 0;
-			uint8_t up_buttonPressed = 0;
-			uint8_t down_buttonPressed = 0;
-			uint8_t move_cmd = 0;
+	for(;;)
+	{
+		/*
+		HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
+		HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
+		HAL_ADC_PollForConversion(&hadc1, 10);
+		HAL_ADC_PollForConversion(&hadc2, 10);
+		int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
+		int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
+		uint8_t left_buttonPressed = 0;
+		uint8_t right_buttonPressed = 0;
+		uint8_t up_buttonPressed = 0;
+		uint8_t down_buttonPressed = 0;
+		uint8_t move_cmd = 0;
 
+		// Xử lý nút trái
+		if (Joysticks(X,Y,2 ) && left_buttonPressed == 0) {
+			left_buttonPressed = 1;
+			move_cmd = 2; // MOVE_LEFT
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,2)) {
+			left_buttonPressed = 0;
+		}
 
+		// Xử lý nút phải
+		if (Joysticks(X,Y,1) && right_buttonPressed == 0) {
+			right_buttonPressed = 1;
+			move_cmd = 1; // MOVE_RIGHT
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,1)) {
+			right_buttonPressed = 0;
+		}
 
+		// Xử lý nút lên
+		if (Joysticks(X,Y,3) && up_buttonPressed == 0) {
+			up_buttonPressed = 1;
+			move_cmd = 3; // MOVE_UP
+			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+		} else if (Joysticks(X,Y,3)) {
+			up_buttonPressed = 0;
+		}
 
-		    // Xử lý nút trái
-		    if (Joysticks(X,Y,2 ) && left_buttonPressed == 0) {
-		        left_buttonPressed = 1;
-		        move_cmd = 2; // MOVE_LEFT
-		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		    } else if (Joysticks(X,Y,2)) {
-		        left_buttonPressed = 0;
-		    }
+		// Xử lý nút xuống
+		if (Joysticks(X,Y,4) && down_buttonPressed == 0) {
+				down_buttonPressed = 1;
+				move_cmd = 4; // MOVE_DOWN
+				osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
+			} else if (Joysticks(X,Y,4)) {
+				down_buttonPressed = 0;
+			}
 
-		    // Xử lý nút phải
-		    if (Joysticks(X,Y,1) && right_buttonPressed == 0) {
-		        right_buttonPressed = 1;
-		        move_cmd = 1; // MOVE_RIGHT
-		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		    } else if (Joysticks(X,Y,1)) {
-		        right_buttonPressed = 0;
-		    }
-
-		    // Xử lý nút lên
-		    if (Joysticks(X,Y,3) && up_buttonPressed == 0) {
-		        up_buttonPressed = 1;
-		        move_cmd = 3; // MOVE_UP
-		        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		    } else if (Joysticks(X,Y,3)) {
-		        up_buttonPressed = 0;
-		    }
-
-		    // Xử lý nút xuống
-		    if (Joysticks(X,Y,4) && down_buttonPressed == 0) {
-		   	        down_buttonPressed = 1;
-		   	        move_cmd = 4; // MOVE_DOWN
-		   	        osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		   	    } else if (Joysticks(X,Y,4)) {
-		   	        down_buttonPressed = 0;
-		   	    }
-
-		    snprintf(buffer, sizeof(buffer), "X: %d \tY: %d \tDirection: %s\r\n", X, Y, MoveCommandStr[move_cmd]);
-		    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-
-		    osDelay(400);
-  }
+		snprintf(buffer, sizeof(buffer), "X: %d \tY: %d \tDirection: %s\r\n", X, Y, MoveCommandStr[move_cmd]);
+		HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+*/
+		osDelay(10);
+	}
 
 
   /* USER CODE END StartTask03 */

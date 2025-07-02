@@ -19,7 +19,7 @@
         <Translation Language="GB">Your best score:&#10;   </Translation>
       </Text>
       <Text Id="OVERSCORE" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">New high score</Translation>
       </Text>
       <Text Id="__SingleUse_5VZM" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Hard</Translation>

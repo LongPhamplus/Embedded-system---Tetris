@@ -1,5 +1,5 @@
 Application/User/generated/GameMenuViewBase.o: \
- D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp \
+ C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamemenu_screen/GameMenuViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
