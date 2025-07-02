@@ -27,6 +27,8 @@
 #include "Components/ili9341/ili9341.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>  
+#include <time.h>    
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -135,6 +137,96 @@ int Joysticks(int X, int Y, int cmd) {
     }
 }
 
+// block ngau nhien
+const uint8_t TETROMINOES[12][4][4] = {
+    // ____
+    {
+        {0,0,0,0},
+        {1,1,1,1},
+        {0,0,0,0},
+        {0,0,0,0}
+    },
+     // I
+    {
+        {0,1,0,0},
+        {0,1,0,0},
+        {0,1,0,0},
+        {0,1,0,0}
+    },
+    // O
+    {
+        {0,0,0,0},
+        {0,1,1,0},
+        {0,1,1,0},
+        {0,0,0,0}
+    },
+     // T
+    {
+        {0,0,0,0},
+        {0,1,1,1},
+        {0,0,1,0},
+        {0,0,0,0}
+    },
+    // _|_
+    {
+        {0,0,0,0},
+        {0,1,0,0},
+        {1,1,1,0},
+        {0,0,0,0}
+    },
+    // ___|
+    {
+        {0,0,0,0},
+        {0,0,1,0},
+        {1,1,1,0},
+        {0,0,0,0}
+    },
+    // |___
+    {
+        {0,0,0,0},
+        {1,0,0,0},
+        {1,1,1,0},
+        {0,0,0,0}
+    },
+    // L nguoc
+    {
+        {0,0,1,0},
+        {0,0,1,0},
+        {0,1,1,0},
+        {0,0,0,0}
+    },
+    // L 
+    {
+        {0,1,0,0},
+        {0,1,0,0},
+        {0,1,1,0},
+        {0,0,0,0}
+    },
+    // S
+    {
+        {0,0,0,0},
+        {0,1,1,0},
+        {1,1,0,0},
+        {0,0,0,0}
+    },
+    // Z
+    {
+        {0,0,0,0},
+        {1,1,0,0},
+        {0,1,1,0},
+        {0,0,0,0}
+    },
+     // 4
+    {
+        {0,0,0,0},
+        {0,1,0,0},
+        {0,1,1,0},
+        {0,0,1,0}
+    }
+};
+
+// Biến lưu block hiện tại
+uint8_t current_block[4][4];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -194,6 +286,64 @@ int mode = 1;
 int high_score = 0;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
+
+// Khởi tạo bộ sinh số ngẫu nhiên
+void init_random() {
+    // Sử dụng hệ thống tick làm seed
+    srand(HAL_GetTick());
+}
+
+// Lấy một block ngẫu nhiên
+void get_random_tetromino(uint8_t block[4][4]) {
+    int index = rand() % 7; // Chọn ngẫu nhiên từ 0-6
+    
+    // Sao chép block được chọn vào block hiện tại
+    for(int i = 0; i < 4; i++) {
+        for(int j = 0; j < 4; j++) {
+            block[i][j] = TETROMINOES[index][i][j];
+        }
+    }
+}
+
+// Kiểm tra di chuyển hợp lệ
+int can_move_right(uint8_t block[4][4], int x, int y) {
+  // Kiểm tra va chạm với tường phải và các block khác
+  // Trả về 1 nếu có thể di chuyển, 0 nếu không
+}
+
+int can_move_left(uint8_t block[4][4], int x, int y) {
+  // Tương tự can_move_right
+}
+
+int can_move_down(uint8_t block[4][4], int x, int y) {
+  // Kiểm tra va chạm với đáy và các block khác
+}
+
+// Xoay block
+void rotate_block(uint8_t block[4][4]) {
+  // Thực hiện xoay block 90 độ
+}
+
+void rotate_block_back(uint8_t block[4][4]) {
+  // Xoay ngược lại nếu xoay không hợp lệ
+}
+
+// Đặt block vào grid
+void place_block(uint8_t block[4][4], int x, int y) {
+  // Lưu block vào grid chính
+  // Kiểm tra và xóa các hàng đã đầy
+}
+
+// Vẽ block
+void draw_block(uint8_t block[4][4], int x, int y) {
+  // Vẽ block tại vị trí (x,y) lên màn hình
+}
+
+// Game over
+void game_over() {
+  // Xử lý khi game kết thúc
+  // Hiển thị điểm, v.v...
+}
 /* USER CODE END 0 */
 
 /**
@@ -238,7 +388,11 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
+// Khởi tạo bộ sinh số ngẫu nhiên
+init_random();
 
+// Tạo block đầu tiên
+get_random_tetromino(current_block);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -1287,65 +1441,75 @@ void StartTask03(void *argument)
 {
 
   /* USER CODE BEGIN StartTask03 */
-	char buffer[64];
+	// Khai báo biến cần thiết
+  uint8_t move_cmd;
+  uint32_t last_tick = osKernelGetTickCount();
+  const uint32_t fall_delay = 500; // Thời gian block tự rơi (ms)
+  
+  // Khởi tạo game
+  init_random();
+  get_random_tetromino(current_block);
+  int posX = 4, posY = 0; // Vị trí ban đầu của block (giữa trên cùng)
+  
   /* Infinite loop */
-	for(;;)
-	{
-		/*
-		HAL_ADC_Start(&hadc1); // start ADC1 channel 13 (PC3)
-		HAL_ADC_Start(&hadc2); // start ADC2 channel 5 (PA5)
-		HAL_ADC_PollForConversion(&hadc1, 10);
-		HAL_ADC_PollForConversion(&hadc2, 10);
-		int X = HAL_ADC_GetValue(&hadc1); // wait for conversion
-		int Y = HAL_ADC_GetValue(&hadc2); // wait for conversionuint8_t move_cmd = 0;
-		uint8_t left_buttonPressed = 0;
-		uint8_t right_buttonPressed = 0;
-		uint8_t up_buttonPressed = 0;
-		uint8_t down_buttonPressed = 0;
-		uint8_t move_cmd = 0;
-
-		// Xử lý nút trái
-		if (Joysticks(X,Y,2 ) && left_buttonPressed == 0) {
-			left_buttonPressed = 1;
-			move_cmd = 2; // MOVE_LEFT
-			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		} else if (Joysticks(X,Y,2)) {
-			left_buttonPressed = 0;
-		}
-
-		// Xử lý nút phải
-		if (Joysticks(X,Y,1) && right_buttonPressed == 0) {
-			right_buttonPressed = 1;
-			move_cmd = 1; // MOVE_RIGHT
-			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		} else if (Joysticks(X,Y,1)) {
-			right_buttonPressed = 0;
-		}
-
-		// Xử lý nút lên
-		if (Joysticks(X,Y,3) && up_buttonPressed == 0) {
-			up_buttonPressed = 1;
-			move_cmd = 3; // MOVE_UP
-			osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-		} else if (Joysticks(X,Y,3)) {
-			up_buttonPressed = 0;
-		}
-
-		// Xử lý nút xuống
-		if (Joysticks(X,Y,4) && down_buttonPressed == 0) {
-				down_buttonPressed = 1;
-				move_cmd = 4; // MOVE_DOWN
-				osMessageQueuePut(myQueue01Handle, &move_cmd, 0, 10);
-			} else if (Joysticks(X,Y,4)) {
-				down_buttonPressed = 0;
-			}
-
-		snprintf(buffer, sizeof(buffer), "X: %d \tY: %d \tDirection: %s\r\n", X, Y, MoveCommandStr[move_cmd]);
-		HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-*/
-		osDelay(10);
-	}
-
+  for(;;)
+  {
+    // Xử lý input từ joystick
+    if(osMessageQueueGet(myQueue01Handle, &move_cmd, NULL, 0) == osOK) {
+      switch(move_cmd) {
+        case 1: // RIGHT
+          if(can_move_right(current_block, posX, posY)) posX++;
+          break;
+        case 2: // LEFT
+          if(can_move_left(current_block, posX, posY)) posX--;
+          break;
+        case 3: // UP (xoay)
+          rotate_block(current_block);
+          if(!is_valid_position(current_block, posX, posY)) {
+            // Nếu xoay không hợp lệ thì xoay lại
+            rotate_block_back(current_block);
+          }
+          break;
+        case 4: // DOWN (rơi nhanh)
+          while(can_move_down(current_block, posX, posY)) {
+            posY++;
+          }
+          place_block(current_block, posX, posY);
+          get_random_tetromino(current_block);
+          posX = 4; posY = 0;
+          break;
+      }
+    }
+    
+    // Block tự rơi xuống theo thời gian
+    uint32_t current_tick = osKernelGetTickCount();
+    if(current_tick - last_tick >= fall_delay) {
+      last_tick = current_tick;
+      
+      if(can_move_down(current_block, posX, posY)) {
+        posY++;
+      } else {
+        // Đặt block vào grid và tạo block mới
+        place_block(current_block, posX, posY);
+        get_random_tetromino(current_block);
+        posX = 4; posY = 0;
+        
+        // Kiểm tra game over
+        if(!is_valid_position(current_block, posX, posY)) {
+          // Xử lý game over
+          game_over();
+          break;
+        }
+      }
+    }
+    
+    // Xóa màn hình và vẽ lại
+    clear_screen();
+    draw_grid();
+    draw_block(current_block, posX, posY);
+    
+    osDelay(10); // Điều chỉnh tốc độ game
+  }
 
   /* USER CODE END StartTask03 */
 }
