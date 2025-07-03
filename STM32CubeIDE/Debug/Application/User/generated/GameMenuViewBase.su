@@ -18,16 +18,16 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gamemenu_screen/GameMenuViewBase.hpp:25:18:virtual void GameMenuViewBase::tickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<GameMenuPresenter>::~View()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:58:1:GameMenuViewBase::~GameMenuViewBase()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:63:6:virtual void GameMenuViewBase::setupScreen()	0	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:68:6:virtual void GameMenuViewBase::handleTickEvent()	0	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:58:1:GameMenuViewBase::~GameMenuViewBase()	0	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:63:6:virtual void GameMenuViewBase::setupScreen()	0	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:68:6:virtual void GameMenuViewBase::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<GameMenuPresenter>::~View()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:58:1:virtual GameMenuViewBase::~GameMenuViewBase()	8	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:58:1:virtual GameMenuViewBase::~GameMenuViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
-C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:9:1:GameMenuViewBase::GameMenuViewBase()	88	static
+D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/gamemenu_screen/GameMenuViewBase.cpp:9:1:GameMenuViewBase::GameMenuViewBase()	88	static

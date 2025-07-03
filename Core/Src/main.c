@@ -1285,7 +1285,6 @@ void StartDefaultTask(void *argument)
 /* USER CODE END Header_StartTask03 */
 void StartTask03(void *argument)
 {
-
   /* USER CODE BEGIN StartTask03 */
 	char buffer[64];
   /* Infinite loop */

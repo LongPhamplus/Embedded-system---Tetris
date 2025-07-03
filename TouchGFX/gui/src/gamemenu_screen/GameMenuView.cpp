@@ -54,12 +54,12 @@ void GameMenuView::tickEvent() {
     uint8_t res;
 	if (osMessageQueueGetCount(myQueue01Handle) > 0) {
 		osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-		if(res == 4){
+		if(res == 2){
 			chooseMode1();
 		}
 		else if (res == 1){
 			chooseMode2();
-		}else if (res == 2){
+		}else if (res == 4){
 			startGame();
 		}else if(res == 3){
 			application().gotoMenu1ScreenNoTransition();

@@ -1,5 +1,5 @@
 Application/User/generated/CustomContainer1Base.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/containers/CustomContainer1Base.cpp \
+ D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/containers/CustomContainer1Base.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

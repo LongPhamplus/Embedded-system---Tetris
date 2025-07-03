@@ -1,5 +1,5 @@
 Application/User/generated/HighScoreViewBase.o: \
- C:/TouchGFXProjects/Tetris/TouchGFX/generated/gui_generated/src/highscore_screen/HighScoreViewBase.cpp \
+ D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/highscore_screen/HighScoreViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/highscore_screen/HighScoreViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
