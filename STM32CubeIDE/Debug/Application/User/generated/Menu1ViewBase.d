@@ -1,5 +1,5 @@
 Application/User/generated/Menu1ViewBase.o: \
- C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/menu1_screen/Menu1ViewBase.cpp \
+ D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/generated/gui_generated/src/menu1_screen/Menu1ViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/menu1_screen/Menu1ViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

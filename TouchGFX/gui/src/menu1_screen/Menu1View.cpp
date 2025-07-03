@@ -29,7 +29,7 @@ void Menu1View::tickEvent()
     uint8_t res = 0;
     if (osMessageQueueGetCount(myQueue01Handle) > 0) {
     	osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-    	if(res == 4 ){
+    	if(res == 2 ){
     		temp ++;
     	     if (temp > 4){
     	        	temp = 1;
@@ -44,10 +44,10 @@ void Menu1View::tickEvent()
     	        } else if(temp <= 0){
     	        	temp = 4;
     	        }
-    	} else if (res == 3){
+    	} else if (res == 4){
 			application().gotoStartGameScreenNoTransition();
     	}
-    	if(res == 2){
+    	if(res == 3){
     		switch(temp){
     		case 1:
     			application().gotoGameBoardScreenNoTransition();

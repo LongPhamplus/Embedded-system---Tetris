@@ -67,12 +67,14 @@ uint32_t GameBoardView::my_rand() {
 }
 void GameBoardView::Ring(uint8_t duration)
 {
-	HAL_Delay(20);
+
 	while(duration --){
-		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,GPIO_PIN_SET);
-		HAL_Delay(10);
-		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,GPIO_PIN_RESET);
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(GPIOG,GPIO_PIN_9,GPIO_PIN_SET);
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(GPIOG,GPIO_PIN_9,GPIO_PIN_RESET);
 	}
+
 }
 
 void delay_ms(uint32_t ms) {
@@ -451,6 +453,7 @@ void GameBoardView::tickEvent()
     	default:
     		break;
     	}
+    	osDelay(200);
     }
     updateBlocks();
 }

@@ -8,12 +8,13 @@ extern osMessageQueueId_t myQueue02Handle;
 GameOverView::GameOverView()
 {
 	if (score > high_score){
-		Unicode::snprintf(textArea1Buffer, 10, " New high score:%d!!!",score);
+		high_score = score;
+		Unicode::snprintf(textArea1Buffer, 100, "New high score: %d!!!",score);
 		textArea1.setWildcard(textArea1Buffer);
 		textArea1.resizeToCurrentText();
 		textArea1.invalidate();
 	} else {
-		Unicode::snprintf(textArea1Buffer, 10, "Score :%d", score);
+		Unicode::snprintf(textArea1Buffer, 100, "Score: %d", score);
 		textArea1.setWildcard(textArea1Buffer);
 		textArea1.resizeToCurrentText();
 		textArea1.invalidate();

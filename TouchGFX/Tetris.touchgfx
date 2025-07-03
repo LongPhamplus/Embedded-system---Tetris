@@ -14,8 +14,8 @@
           {
             "Type": "Image",
             "Name": "image1_2",
-            "X": -406,
-            "Y": -200,
+            "X": -402,
+            "Y": -189,
             "Width": 240,
             "Height": 320,
             "RelativeFilename": "blank-white-background-xbsfzsltjksfompa.png"
@@ -225,9 +225,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 108,
-            "Y": 178,
-            "Width": 13,
+            "X": 44,
+            "Y": 179,
+            "Width": 153,
             "Height": 24,
             "TextId": "__SingleUse_Q1TT",
             "TextRotation": "0",

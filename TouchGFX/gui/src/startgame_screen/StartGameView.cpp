@@ -31,7 +31,7 @@ void StartGameView::handleTickEvent() {
     uint8_t res;
 	if (osMessageQueueGetCount(myQueue01Handle) > 0) {
 		osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-		if (res == 2) {
+		if (res == 3) {
 			goToMenu();
 		}
 	}

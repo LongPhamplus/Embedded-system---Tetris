@@ -1,5 +1,5 @@
 Application/User/gui/GameOverView.o: \
- C:/TouchGFXProjects/Embedded-system---Tetris/TouchGFX/gui/src/gameover_screen/GameOverView.cpp \
+ D:/Desktop/IoT/Embedded-system---Tetris/TouchGFX/gui/src/gameover_screen/GameOverView.cpp \
  ../../TouchGFX/gui/include/gui/gameover_screen/GameOverView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gameover_screen/GameOverViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
